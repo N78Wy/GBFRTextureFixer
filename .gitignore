@@ -1,0 +1,39 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Packaging and build output
+build/
+dist/
+*.egg-info/
+*.egg
+
+# IDE and OS metadata
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Application-generated files
+.gbfr_texture_fixer/
+gbfr_texture_fixer.json
+gbfr_texture_fixer.json.tmp
+*.mmat.bak.*
+
+# Local logs and temporary files
+*.log
+*.tmp
+*.temp
+~$*
