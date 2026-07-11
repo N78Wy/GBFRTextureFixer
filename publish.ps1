@@ -70,8 +70,18 @@ try {
     gh auth status
     Assert-LastExitCode "GitHub CLI authentication check"
 
-    gh release view $Tag *> $null
-    if ($LASTEXITCODE -eq 0) {
+    # A missing release is expected here. Temporarily prevent PowerShell from
+    # promoting gh's stderr/exit code to a terminating NativeCommandError.
+    $previousErrorActionPreference = $ErrorActionPreference
+    $ErrorActionPreference = "SilentlyContinue"
+    try {
+        gh release view $Tag *> $null
+        $releaseViewExitCode = $LASTEXITCODE
+    }
+    finally {
+        $ErrorActionPreference = $previousErrorActionPreference
+    }
+    if ($releaseViewExitCode -eq 0) {
         throw "GitHub Release '$Tag' already exists."
     }
 
