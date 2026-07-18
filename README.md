@@ -4,8 +4,12 @@
 
 Repairs outdated MMAT texture-streaming metadata in *Granblue Fantasy: Relink* mods after game updates. The tool reads the game's original `data.i` archive and modifies only the mod files it discovers.
 
-> [!WARNING]
-> This script can fix only simple texture errors. It processes every supported mod file under the directory where it is run, so carefully limit the contents and scope of that directory. Back up your mods before running it.
+> [!CAUTION]
+> **IMPORTANT: This script may cause mods that currently work correctly to stop working!**
+>
+> **Back up your mods before running it. Place only this script and the mods you intend to repair in the same directory—do not run it in a directory containing unrelated or already-working mods.**
+>
+> This script can fix only simple texture errors and will process every supported mod file under the directory where it is run.
 
 ## Usage
 
